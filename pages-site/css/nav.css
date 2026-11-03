@@ -1,0 +1,42 @@
+/* Spigelmeyer Productions: grouped, accessible primary nav (generated into css/nav.css by build.py) */
+.skip{z-index:100}
+.skip:focus{outline:2px solid var(--gold-l);outline-offset:2px}
+main:focus{outline:none}
+.site-nav .nav-top{display:flex;align-items:center;gap:clamp(18px,2.2vw,34px);list-style:none;margin:0;padding:0}
+.site-nav li{position:relative}
+.site-nav a,.site-nav .nav-toggle{font-family:'Montserrat',sans-serif;font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--steward);white-space:nowrap}
+.site-nav .nav-toggle{background:none;border:0;border-bottom:1px solid transparent;padding:6px 0;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.site-nav .caret{width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .15s}
+.site-nav .nav-toggle[aria-expanded="true"] .caret{transform:translateY(1px) rotate(-135deg)}
+.site-nav .nav-toggle:hover,.site-nav .nav-toggle[aria-expanded="true"]{border-bottom-color:var(--gold)}
+.site-nav .nav-toggle.is-current{color:var(--midnight);font-weight:600;border-bottom-color:var(--gold)}
+.site-nav .sub{display:none;list-style:none;margin:0;padding:10px 0;position:absolute;top:calc(100% + 12px);left:-18px;min-width:230px;background:var(--cream);border:1px solid var(--line);border-top:2px solid var(--gold);box-shadow:0 14px 28px rgba(15,30,45,.14);z-index:60}
+.site-nav .nav-toggle[aria-expanded="true"] + .sub{display:block}
+.site-nav .sub a{display:block;padding:11px 18px;border-bottom:0;letter-spacing:.12em;font-size:11.5px}
+.site-nav .sub a:hover{background:var(--ivory);color:var(--midnight)}
+.site-nav .sub a[aria-current="page"]{border-left:2px solid var(--gold);color:var(--midnight);font-weight:600}
+.site-nav .nav-cta a{background:var(--midnight);color:var(--ivory);padding:11px 18px;border:1px solid var(--midnight)}
+.site-nav .nav-cta a:hover{background:var(--steward);border-color:var(--steward);color:var(--ivory)}
+.site-nav .nav-cta a[aria-current="page"]{color:var(--ivory);border-bottom:1px solid var(--gold)}
+/* Visible focus: Steward Navy ring on light header (3:1+ against cream), gold ring on dark */
+header.site a:focus-visible,header.site button:focus-visible{outline:3px solid var(--steward);outline-offset:3px}
+.site-nav .nav-cta a:focus-visible{outline:3px solid var(--steward);outline-offset:3px;box-shadow:inset 0 0 0 2px var(--gold-l)}
+@media (max-width:1040px){
+  .site-nav{max-height:calc(100vh - 80px);overflow-y:auto}
+  .site-nav .nav-top{flex-direction:column;align-items:stretch;gap:0;padding:8px 0 18px}
+  .site-nav .nav-top > li > a,.site-nav .nav-toggle{display:flex;width:100%;justify-content:space-between;padding:16px 48px;border-bottom:0;font-size:12.5px;min-height:44px}
+  .site-nav .sub{position:static;box-shadow:none;border:0;border-left:2px solid var(--gold);margin:0 48px 8px;min-width:0;padding:4px 0;background:transparent}
+  .site-nav .sub a{padding:12px 18px;min-height:44px}
+  .site-nav .nav-cta{padding:12px 48px 0}
+  .site-nav .nav-cta a{display:block;text-align:center}
+}
+@media (max-width:560px){
+  .site-nav .nav-top > li > a,.site-nav .nav-toggle{padding:14px 22px}
+  .site-nav .sub{margin:0 22px 8px}
+  .site-nav .nav-cta{padding:12px 22px 0}
+}
+@media (prefers-reduced-motion:reduce){.site-nav .caret{transition:none}}
+/* Sitewide AA contrast fixes: gold text on light backgrounds -> Steward Navy (gold kept on dark sections) */
+.feature h2 + .st{color:var(--steward)}
+.navy .feature h2 + .st,.dark .feature h2 + .st{color:var(--gold-l)}
+.c-details dt{color:var(--steward)}

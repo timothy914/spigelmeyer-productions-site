@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio | Spigelmeyer Productions</title>
+<meta name="description" content="Selected brand identity and design work by Spigelmeyer Productions.">
+<meta name="keywords" content="veteran-owned creative productions, brand identity design, storytelling design, memoir, iPennedIt Publishing, The Frequency journal">
+<meta name="theme-color" content="#0F1E2D">
+<meta name="sp-forms-endpoint" content="https://sp-forms.timothy-876.workers.dev/submit">
+<link rel="canonical" href="https://spigiproducts.com/portfolio">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spigelmeyer Productions">
+<meta property="og:title" content="Portfolio | Spigelmeyer Productions">
+<meta property="og:description" content="Selected brand identity and design work by Spigelmeyer Productions.">
+<meta property="og:url" content="https://spigiproducts.com/portfolio">
+<meta property="og:image" content="https://spigiproducts.com/img/social-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@17Timothy21">
+<link rel="stylesheet" href="css/site.css">
+<style>
+.pf-sec{margin-top:8px}
+.pf-sec h2{text-align:center}
+.pf-note{font-family:'Montserrat';font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:10px}
+.pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px}
+.pf-card{border:1px solid var(--line);background:#fff}
+.pf-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.pf-media{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);box-sizing:border-box}
+.pf-media picture{display:contents}
+.pf-card .pf-media img{width:100%;height:100%;aspect-ratio:auto;object-fit:contain}
+.pf-card .pf-body{padding:18px 20px 22px}
+.pf-card h3{font-family:'Cinzel';font-weight:400;font-size:21px;color:var(--midnight)}
+.pf-card .pf-label{font-family:'Montserrat';font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--steward);margin-top:6px}
+.pf-card p{font-size:18px;line-height:1.45;margin-top:8px}
+.pf-ph{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:var(--steward);color:var(--gold-l);font-family:'Montserrat';font-weight:600;font-size:12px;letter-spacing:.3em;text-transform:uppercase;border:1px solid var(--line);text-align:center;padding:20px}
+#pf-client .pf-grid{grid-template-columns:repeat(2,minmax(0,380px));justify-content:center}
+.pf-open{all:unset;box-sizing:border-box;display:block;width:100%;cursor:zoom-in;text-align:left;font:inherit}
+.pf-open:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.pf-open:hover .pf-media img{transform:scale(1.02)}
+.pf-media img{transition:transform .3s}
+.pf-soon{display:inline-block;font-family:'Montserrat';font-weight:600;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;background:var(--midnight);color:var(--ivory);border-left:3px solid var(--gold);padding:5px 10px;margin-bottom:10px}
+.pf-count{font-family:'Montserrat';font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.lb{position:fixed;inset:0;z-index:1000;background:rgba(8,10,16,.95);display:none;flex-direction:column;color:#fff}
+.lb[open],.lb.on{display:flex}
+.lb-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;font-family:'Montserrat';font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.lb-stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 64px;touch-action:pan-y}
+.lb-stage picture{display:contents}
+.lb-stage img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.lb-cap{padding:10px 16px 16px;text-align:center;font-size:16px;min-height:2.6em;color:#ddd}
+.lb button{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:50%;width:46px;height:46px;font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%)}
+.lb-prev{left:10px}.lb-next{right:10px}
+.lb.single .lb-nav{display:none}
+@media (max-width:900px){.pf-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.pf-grid,#pf-client .pf-grid{grid-template-columns:1fr;gap:20px}.lb-stage{padding:0 8px}.lb-nav{top:auto;bottom:58px;transform:none}}
+</style>
+<link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap hdr">
+    <a class="logo" href="index.html"><img src="img/SP_horizontal_fullcolor-onlight.svg" alt="Spigelmeyer Productions home" width="250" height="44"></a>
+    <button class="burger" type="button" aria-label="Main menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main"><ul class="nav-top">
+      <li class="has-sub"><button type="button" class="nav-toggle is-current" aria-expanded="false" aria-controls="nav-sub-0">Work<span class="caret" aria-hidden="true"></span></button>
+        <ul class="sub" id="nav-sub-0"><li><a href="design-services.html">Design Services</a></li><li><a href="portfolio.html" aria-current="page">Portfolio</a></li></ul></li>
+      <li class="has-sub"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-sub-1">Publications<span class="caret" aria-hidden="true"></span></button>
+        <ul class="sub" id="nav-sub-1"><li><a href="publications.html">All Publications</a></li><li><a href="publications.html#in-the-beginning">In The Beginning</a></li><li><a href="publications.html#the-frequency">The Frequency</a></li><li><a href="field-notes.html">Field Notes</a></li><li><a href="the-inner-thread.html">The Inner Thread</a></li></ul></li>
+      <li><a href="merch.html">Merch</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="government.html">Government</a></li>
+      <li class="nav-cta"><a href="contact.html">Start a Project</a></li>
+    </ul></nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<section class="banner dark">
+  <div class="wrap">
+    <div class="kicker c">Design Work</div>
+    <h1>Portfolio</h1>
+    <p class="lede">Selected brand identity and design work by Spigelmeyer Productions.</p>
+    
+  </div>
+</section>
+<section class="section pf-sec" id="pf-client" aria-labelledby="pf-client-h">
+  <div class="wrap">
+    <h2 id="pf-client-h">Client Work</h2>
+    
+    <div class="pf-grid">
+      <article class="pf-card"><div class="pf-media" style="background:#ffffff;padding:6%"><picture><source type="image/webp" srcset="img/portfolio/guardian-angel-ride-960.webp 960w, img/portfolio/guardian-angel-ride-1920.webp 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px"><img src="img/portfolio/guardian-angel-ride-960.jpg" srcset="img/portfolio/guardian-angel-ride-960.jpg 960w, img/portfolio/guardian-angel-ride-1920.jpg 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px" width="4000" height="4000" alt="Guardian Angel Ride logo with the tagline Protecting What Matters, Every Mile" loading="lazy" decoding="async"></picture></div><div class="pf-body"><h3>Guardian Angel Ride</h3><div class="pf-label">Logo &amp; Brand Identity</div><p>Logo and brand identity for a transportation business in the State College, PA area.</p></div></article>
+      <article class="pf-card"><div class="pf-media" style="background:#0e0e0e;padding:0"><picture><source type="image/webp" srcset="img/portfolio/mad-max-knife-handles-960.webp 960w, img/portfolio/mad-max-knife-handles-1920.webp 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px"><img src="img/portfolio/mad-max-knife-handles-960.jpg" srcset="img/portfolio/mad-max-knife-handles-960.jpg 960w, img/portfolio/mad-max-knife-handles-1920.jpg 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px" width="2400" height="1152" alt="Mad Max Custom Knife Handles website mockup showing home, work, contact and mobile pages" loading="lazy" decoding="async"></picture></div><div class="pf-body"><h3>Mad Max Custom Knife Handles</h3><div class="pf-label">Website Design &amp; Mockup</div><p>Website design and mockup for a York, Pennsylvania custom knife handle maker, covering the home, work, contact and mobile pages.</p></div></article>
+    </div>
+  </div>
+</section>
+<section class="section pf-sec" id="pf-studio" aria-labelledby="pf-studio-h">
+  <div class="wrap">
+    <h2 id="pf-studio-h">SP Studio &amp; Concept Work</h2>
+    <p class="pf-note">Concept brands, posters and mockups designed in-house by Timothy Lee Spigelmeyer Jr. Not client work.</p>
+    <div class="pf-grid">
+      <article class="pf-card"><button type="button" class="pf-open" data-title="[Au]thentic" data-g="[{&quot;w&quot;: &quot;img/portfolio/authentic-tee-mockup-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/authentic-tee-mockup-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/authentic-tee-mockup-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 1337, &quot;a&quot;: &quot;Navy [Au]thentic T-shirt mockup, front and back&quot;}, {&quot;w&quot;: &quot;img/portfolio/authentic-artwork-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/authentic-artwork-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/authentic-artwork-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 1243, &quot;a&quot;: &quot;[Au]thentic artwork in gold on navy with the line no one can do you like you can&quot;}]" aria-haspopup="dialog"><div class="pf-media" style="background:#eef0f2;padding:4%"><picture><source type="image/webp" srcset="img/portfolio/authentic-tee-mockup-960.webp 960w, img/portfolio/authentic-tee-mockup-1920.webp 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px"><img src="img/portfolio/authentic-tee-mockup-960.jpg" srcset="img/portfolio/authentic-tee-mockup-960.jpg 960w, img/portfolio/authentic-tee-mockup-1920.jpg 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px" width="2662" height="1854" alt="Navy [Au]thentic T-shirt mockup, front and back" loading="lazy" decoding="async"></picture></div><div class="pf-body"><h3>[Au]thentic</h3><div class="pf-label">Apparel &middot; T-Shirt Design</div><p>T-shirt design built around a gold &ldquo;[Au] 79&rdquo; element mark and the line &ldquo;no one can do you like you can.&rdquo;</p><div class="pf-count">2 images &middot; view gallery</div></div></button></article>
+      <article class="pf-card"><button type="button" class="pf-open" data-title="Captain" data-g="[{&quot;w&quot;: &quot;img/portfolio/captain-logo-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/captain-logo-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/captain-logo-960.webp&quot;, &quot;W&quot;: 1840, &quot;H&quot;: 1376, &quot;a&quot;: &quot;Captain logo: an anchor with script lettering and the line Smooth seas never made a good captain&quot;}]" aria-haspopup="dialog"><div class="pf-media" style="background:#ffffff;padding:4%"><picture><source type="image/webp" srcset="img/portfolio/captain-logo-960.webp 960w, img/portfolio/captain-logo-1920.webp 1840w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px"><img src="img/portfolio/captain-logo-960.jpg" srcset="img/portfolio/captain-logo-960.jpg 960w, img/portfolio/captain-logo-1920.jpg 1840w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px" width="1840" height="1376" alt="Captain logo: an anchor with script lettering and the line Smooth seas never made a good captain" loading="lazy" decoding="async"></picture></div><div class="pf-body"><h3>Captain</h3><div class="pf-label">Logo</div><p>Logo pairing an engraved anchor with script lettering and the line &ldquo;Smooth seas never made a good captain.&rdquo;</p><div class="pf-count">1 image &middot; view gallery</div></div></button></article>
+      <article class="pf-card"><button type="button" class="pf-open" data-title="Whimworks &amp; The Fifth Flower" data-g="[{&quot;w&quot;: &quot;img/portfolio/fifth-flower-box-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/fifth-flower-box-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/fifth-flower-box-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 1280, &quot;a&quot;: &quot;The Fifth Flower board game box mockup in a jungle setting&quot;}, {&quot;w&quot;: &quot;img/portfolio/fifth-flower-answer-the-call-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/fifth-flower-answer-the-call-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/fifth-flower-answer-the-call-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 2392, &quot;a&quot;: &quot;Whimworks poster: Answer the Call, become the Guardian of the Fifth Flower&quot;}, {&quot;w&quot;: &quot;img/portfolio/fifth-flower-roll-the-beans-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/fifth-flower-roll-the-beans-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/fifth-flower-roll-the-beans-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 2392, &quot;a&quot;: &quot;Whimworks poster: Roll the Beans, The Fifth Flower board game&quot;}, {&quot;w&quot;: &quot;img/portfolio/fifth-flower-logo-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/fifth-flower-logo-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/fifth-flower-logo-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 1920, &quot;a&quot;: &quot;The Fifth Flower logo: A Revival of Patolli&quot;}, {&quot;w&quot;: &quot;img/portfolio/whimworks-logo-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/whimworks-logo-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/whimworks-logo-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 1920, &quot;a&quot;: &quot;Whimworks Gaming Company logo with the line History Replayed&quot;}]" aria-haspopup="dialog"><div class="pf-media" style="background:#14110d;padding:4%"><picture><source type="image/webp" srcset="img/portfolio/fifth-flower-box-960.webp 960w, img/portfolio/fifth-flower-box-1920.webp 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px"><img src="img/portfolio/fifth-flower-box-960.jpg" srcset="img/portfolio/fifth-flower-box-960.jpg 960w, img/portfolio/fifth-flower-box-1920.jpg 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px" width="3825" height="2550" alt="The Fifth Flower board game box mockup in a jungle setting" loading="lazy" decoding="async"></picture></div><div class="pf-body"><h3>Whimworks &amp; The Fifth Flower</h3><div class="pf-label">Game Brand Identity &amp; Marketing</div><p>Identity and marketing for a concept gaming company, Whimworks (&ldquo;History Replayed&rdquo;), and its concept board game reviving Patolli.</p><div class="pf-count">5 images &middot; view gallery</div></div></button></article>
+      <article class="pf-card"><button type="button" class="pf-open" data-title="Crackling’s Wood Fired Smokehouse" data-g="[{&quot;w&quot;: &quot;img/portfolio/cracklings-kiosk-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/cracklings-kiosk-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/cracklings-kiosk-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 1346, &quot;a&quot;: &quot;Crackling\u2019s Wood Fired Smokehouse poster on a street kiosk mockup&quot;}, {&quot;w&quot;: &quot;img/portfolio/cracklings-poster-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/cracklings-poster-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/cracklings-poster-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 2686, &quot;a&quot;: &quot;Crackling\u2019s Wood Fired Smokehouse poster: Hear it before you taste it&quot;}]" aria-haspopup="dialog"><div class="pf-media" style="background:#1a1512;padding:4%"><picture><source type="image/webp" srcset="img/portfolio/cracklings-kiosk-960.webp 960w, img/portfolio/cracklings-kiosk-1920.webp 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px"><img src="img/portfolio/cracklings-kiosk-960.jpg" srcset="img/portfolio/cracklings-kiosk-960.jpg 960w, img/portfolio/cracklings-kiosk-1920.jpg 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px" width="3500" height="2454" alt="Crackling&rsquo;s Wood Fired Smokehouse poster on a street kiosk mockup" loading="lazy" decoding="async"></picture></div><div class="pf-body"><h3>Crackling&rsquo;s Wood Fired Smokehouse</h3><div class="pf-label">Poster &amp; Marketing</div><p>Concept restaurant poster, &ldquo;Hear it before you taste it,&rdquo; shown flat and on a street kiosk.</p><div class="pf-count">2 images &middot; view gallery</div></div></button></article>
+      <article class="pf-card"><button type="button" class="pf-open" data-title="Breezy Productions" data-g="[{&quot;w&quot;: &quot;img/portfolio/breezy-logo-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/breezy-logo-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/breezy-logo-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 908, &quot;a&quot;: &quot;Breezy Productions logo with the tagline Music for the Masses&quot;}]" aria-haspopup="dialog"><div class="pf-media" style="background:#191932;padding:4%"><picture><source type="image/webp" srcset="img/portfolio/breezy-logo-960.webp 960w, img/portfolio/breezy-logo-1920.webp 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px"><img src="img/portfolio/breezy-logo-960.jpg" srcset="img/portfolio/breezy-logo-960.jpg 960w, img/portfolio/breezy-logo-1920.jpg 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px" width="2400" height="1135" alt="Breezy Productions logo with the tagline Music for the Masses" loading="lazy" decoding="async"></picture></div><div class="pf-body"><h3>Breezy Productions</h3><div class="pf-label">Logo</div><p>Logo with a speaker-inspired &ldquo;B&rdquo; mark and the tagline &ldquo;Music for the Masses.&rdquo;</p><div class="pf-count">1 image &middot; view gallery</div></div></button></article>
+      <article class="pf-card"><button type="button" class="pf-open" data-title="[RE]MEMBERing" data-g="[{&quot;w&quot;: &quot;img/portfolio/remembering-kiosk-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/remembering-kiosk-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/remembering-kiosk-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 1346, &quot;a&quot;: &quot;[RE]MEMBERing event poster on a street kiosk mockup&quot;}, {&quot;w&quot;: &quot;img/portfolio/remembering-poster-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/remembering-poster-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/remembering-poster-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 2967, &quot;a&quot;: &quot;[RE]MEMBERing poster: A Still Small Voice, an evening of sound, silence, and Return&quot;}]" aria-haspopup="dialog"><div class="pf-media" style="background:#15130f;padding:4%"><picture><source type="image/webp" srcset="img/portfolio/remembering-kiosk-960.webp 960w, img/portfolio/remembering-kiosk-1920.webp 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px"><img src="img/portfolio/remembering-kiosk-960.jpg" srcset="img/portfolio/remembering-kiosk-960.jpg 960w, img/portfolio/remembering-kiosk-1920.jpg 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px" width="3500" height="2454" alt="[RE]MEMBERing event poster on a street kiosk mockup" loading="lazy" decoding="async"></picture></div><div class="pf-body"><h3>[RE]MEMBERing</h3><div class="pf-label">Event Poster</div><p>Event poster for &ldquo;A Still Small Voice,&rdquo; an evening of sound, silence, and Return, shown on a kiosk and flat.</p><div class="pf-count">2 images &middot; view gallery</div></div></button></article>
+      <article class="pf-card"><button type="button" class="pf-open" data-title="Black Sea Chocolate" data-g="[{&quot;w&quot;: &quot;img/portfolio/black-sea-group-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/black-sea-group-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/black-sea-group-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 1280, &quot;a&quot;: &quot;Black Sea Chocolate packaging group: a gold tin, a teal box and a canvas tote, each with the red oval Black Sea Chocolate logo&quot;}, {&quot;w&quot;: &quot;img/portfolio/black-sea-bar-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/black-sea-bar-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/black-sea-bar-960.webp&quot;, &quot;W&quot;: 1920, &quot;H&quot;: 1280, &quot;a&quot;: &quot;Black Sea Chocolate bar in red and gold packaging with a hand-drawn cacao pod, unwrapped to show dark chocolate squares&quot;}, {&quot;w&quot;: &quot;img/portfolio/black-sea-gift-box-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/black-sea-gift-box-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/black-sea-gift-box-960.webp&quot;, &quot;W&quot;: 1776, &quot;H&quot;: 1360, &quot;a&quot;: &quot;Open teal and gold Black Sea Chocolate gift box with a tray of gold-wrapped chocolates&quot;}, {&quot;w&quot;: &quot;img/portfolio/black-sea-coffee-pouch-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/black-sea-coffee-pouch-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/black-sea-coffee-pouch-960.webp&quot;, &quot;W&quot;: 1120, &quot;H&quot;: 2240, &quot;a&quot;: &quot;Teal Black Sea Salt Coffee pouch with the red oval logo and hand-drawn cacao leaves, surrounded by coffee beans and sea salt&quot;}, {&quot;w&quot;: &quot;img/portfolio/black-sea-tote-1920.webp&quot;, &quot;j&quot;: &quot;img/portfolio/black-sea-tote-1920.jpg&quot;, &quot;s&quot;: &quot;img/portfolio/black-sea-tote-960.webp&quot;, &quot;W&quot;: 1776, &quot;H&quot;: 1360, &quot;a&quot;: &quot;Canvas Black Sea Chocolate tote bag with the red oval logo and a blue patterned border&quot;}]" aria-haspopup="dialog"><div class="pf-media" style="background:#f1ece2;padding:4%"><picture><source type="image/webp" srcset="img/portfolio/black-sea-group-960.webp 960w, img/portfolio/black-sea-group-1920.webp 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px"><img src="img/portfolio/black-sea-group-960.jpg" srcset="img/portfolio/black-sea-group-960.jpg 960w, img/portfolio/black-sea-group-1920.jpg 1920w" sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 380px" width="1920" height="1280" alt="Black Sea Chocolate packaging group: a gold tin, a teal box and a canvas tote, each with the red oval Black Sea Chocolate logo" loading="lazy" decoding="async"></picture></div><div class="pf-body"><div class="pf-soon">Coming soon!</div><h3>Black Sea Chocolate</h3><div class="pf-label">Packaging &amp; Brand Identity</div><p>A concept chocolate and coffee brand with packaging for a bar, pouch, tin, gift box and tote, with hand-drawn cacao details.</p><div class="pf-count">5 images &middot; view gallery</div></div></button></article>
+    </div>
+  </div>
+</section>
+<div class="lb" id="pf-lb" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
+  <div class="lb-top"><span><span id="lb-title"></span> &middot; <span id="lb-pos" aria-live="polite"></span></span><button type="button" class="lb-close" aria-label="Close gallery">&times;</button></div>
+  <div class="lb-stage"><picture><source id="lb-src" type="image/webp"><img id="lb-img" alt=""></picture></div>
+  <button type="button" class="lb-nav lb-prev" aria-label="Previous image">&#8249;</button>
+  <button type="button" class="lb-nav lb-next" aria-label="Next image">&#8250;</button>
+  <p class="lb-cap" id="lb-cap"></p>
+</div>
+<script>
+(function(){var lb=document.getElementById('pf-lb'),img=document.getElementById('lb-img'),src=document.getElementById('lb-src'),cap=document.getElementById('lb-cap'),pos=document.getElementById('lb-pos'),ttl=document.getElementById('lb-title'),G=[],i=0,opener=null;
+function show(){var g=G[i];src.srcset=g.s+' 960w, '+g.w+' '+g.W+'w';src.sizes='100vw';img.src=g.j;img.width=g.W;img.height=g.H;img.alt=g.a;cap.textContent=g.a;pos.textContent=(i+1)+' of '+G.length;}
+function open(b){G=JSON.parse(b.dataset.g);i=0;opener=b;ttl.textContent=b.dataset.title;lb.classList.toggle('single',G.length<2);show();lb.hidden=false;lb.classList.add('on');document.body.style.overflow='hidden';lb.querySelector('.lb-close').focus();}
+function close(){lb.classList.remove('on');lb.hidden=true;document.body.style.overflow='';if(opener)opener.focus();}
+function go(d){if(G.length<2)return;i=(i+d+G.length)%G.length;show();}
+document.querySelectorAll('.pf-open').forEach(function(b){b.addEventListener('click',function(){open(b)})});
+lb.querySelector('.lb-close').onclick=close;lb.querySelector('.lb-prev').onclick=function(){go(-1)};lb.querySelector('.lb-next').onclick=function(){go(1)};
+lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb-stage'))close();});
+document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();else if(e.key==='ArrowRight')go(1);else if(e.key==='ArrowLeft')go(-1);else if(e.key==='Tab'){var f=[].slice.call(lb.querySelectorAll('button')).filter(function(x){return x.offsetParent});var a=f.indexOf(document.activeElement);if(e.shiftKey&&a<=0){e.preventDefault();f[f.length-1].focus();}else if(!e.shiftKey&&a===f.length-1){e.preventDefault();f[0].focus();}}});
+var x0=null,y0=null;lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))go(dx<0?1:-1);x0=null;},{passive:true});})();
+</script>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="f-brand"><img src="img/SP_seal_fullcolor-ondark.svg" alt="SP seal"><div class="w">SPIGELMEYER<small>PRODUCTIONS</small></div></div>
+        <p class="f-tag">Meaning-making, not decoration.</p>
+      </div>
+      <div><h2 class="f-h">Explore</h2><ul class="f-nav"><li><a href="index.html">Home</a></li><li><a href="publications.html">Publications</a></li><li><a href="design-services.html">Design Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="merch.html">Merch</a></li><li><a href="field-notes.html">Field Notes</a></li><li><a href="the-inner-thread.html">The Inner Thread</a></li><li><a href="contact.html">Contact</a></li><li><a href="government.html">Government &amp; Military</a></li></ul></div>
+      <div><h2 class="f-h">Contact</h2>
+        <div class="f-contact"><a href="mailto:timothy@spigiproducts.com">timothy@spigiproducts.com</a><br><a href="tel:+18145378014">814-537-8014</a></div>
+        <div class="social"><a href="https://x.com/17Timothy21" target="_blank" rel="noopener" aria-label="X (opens in a new tab)"><img src="img/ic-x.svg" alt=""></a><a href="https://www.instagram.com/timothyleespigelmeyerjr" target="_blank" rel="noopener" aria-label="Instagram (opens in a new tab)"><img src="img/ic-instagram.svg" alt=""></a><a href="https://www.linkedin.com/in/timothy-lee-spigelmeyer-jr-781b3437b" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)"><img src="img/ic-linkedin.svg" alt=""></a><a href="https://www.facebook.com/profile.php?id=61595340982492" target="_blank" rel="noopener" aria-label="Facebook (opens in a new tab)"><img src="img/ic-facebook.svg" alt=""></a></div>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span class="v"><img src="img/star.svg" alt="">Veteran Owned and Operated</span>
+      <span>&copy; 2026 Timothy Lee Spigelmeyer Jr and Spigelmeyer Productions. All Rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+<script src="js/site.js" defer></script>
+<script src="js/nav.js" defer></script>
+</body>
+</html>

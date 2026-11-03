@@ -1,0 +1,10 @@
+name = "sp-forms"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+# Email Sending binding (requires Workers Paid + spigiproducts.com onboarded to Email Sending)
+[[send_email]]
+name = "EMAIL"
+allowed_sender_addresses = ["forms@spigiproducts.com"]
+allowed_destination_addresses = ["timothy@spigiproducts.com"]
