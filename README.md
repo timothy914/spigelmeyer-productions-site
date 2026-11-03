@@ -16,3 +16,9 @@ Static site (plain HTML/CSS/JS, no framework), hosted on Cloudflare Pages.
 Cloudflare Pages settings: build command **none**, output directory **`pages-site`**.
 
 `PREVIEW=1 python3 pages-src/build.py` writes unreleased pages to `pages-site-preview/` (not committed).
+
+## Hosting
+- Cloudflare Pages project: **spigelmeyer-productions-site** (Git-connected to this repo, branch `main`).
+- Custom domains: spigiproducts.com and www.spigiproducts.com.
+- The old direct-upload project `spigelmeyer-productions` is retired and kept only as a fallback.
+- `forms-worker` CORS allows the custom domains; form submissions from the `*.pages.dev` test address are refused by design.

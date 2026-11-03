@@ -63,7 +63,8 @@ def head(file, title, desc, og_image='/img/social-share.jpg', og_type='website')
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <meta name="keywords" content="veteran-owned creative productions, brand identity design, storytelling design, memoir, iPennedIt Publishing, The Frequency journal">
-<meta name="theme-color" content="#0F1E2D">{(chr(10)+'<meta name="sp-forms-endpoint" content="'+FORMS_ENDPOINT+'">') if LIVE else ""}
+<meta name="theme-color" content="#0F1E2D">
+<meta name="generator" content="Spigelmeyer Productions site build, deployed from GitHub">{(chr(10)+'<meta name="sp-forms-endpoint" content="'+FORMS_ENDPOINT+'">') if LIVE else ""}
 <link rel="canonical" href="{BASE}{path}">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
