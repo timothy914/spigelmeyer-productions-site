@@ -802,7 +802,7 @@ EPISODES = [
          cover=dict(base='img/inner-thread/ep1-cover-v2', widths=(960, 1920), h=1080, alt='The Inner Thread, Episode 1: The Oracle Wasn&rsquo;t the Answer. You Were.', play='play-side')),
     dict(num=2, title='The Upanishads', youtube='j7n43mCGFv4', runtime='4:46', status=None,
          cover=dict(base='img/inner-thread/ep2-cover-v2', widths=(960, 1920), h=1080, alt='The Inner Thread, Episode 2: The Upanishads', play='play-side')),
-    dict(num=3, title='Early Buddhism', youtube='xsF8AjsV3YE', runtime=None, status=None,
+    dict(num=3, title='Early Buddhism', youtube='xsF8AjsV3YE', runtime='4:51', status=None,
          cover=dict(base='img/inner-thread/ep3-cover', widths=(960, 1920), h=1080, alt='The Inner Thread, Episode 3: Early Buddhism. What If the Self You Defend Is Not What You Think?', play='play-right')),
 ]
 
