@@ -802,6 +802,7 @@ EPISODES = [
          cover=dict(base='img/inner-thread/ep1-cover-v2', widths=(960, 1920), h=1080, alt='The Inner Thread, Episode 1: The Oracle Wasn&rsquo;t the Answer. You Were.', play='play-side')),
     dict(num=2, title='The Upanishads', youtube='j7n43mCGFv4', runtime='4:46', status=None,
          cover=dict(base='img/inner-thread/ep2-cover-v2', widths=(960, 1920), h=1080, alt='The Inner Thread, Episode 2: The Upanishads', play='play-side')),
+    dict(num=3, title='Early Buddhism', youtube='xsF8AjsV3YE', runtime=None, status=None, cover=None),
 ]
 
 def it_picture(c):
