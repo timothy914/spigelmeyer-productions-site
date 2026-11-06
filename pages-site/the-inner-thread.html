@@ -35,7 +35,7 @@
 .it-video .play{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:rgba(15,30,45,.82);border:2px solid var(--gold)}
 .it-video .play::after{content:"";position:absolute;left:33px;top:24px;border-style:solid;border-width:18px 0 18px 28px;border-color:transparent transparent transparent var(--gold)}
 .it-video .play-low{top:76%}
-.it-video .play-side{left:37%;top:58%}
+.it-video .play-side{left:37%;top:58%}.it-video .play-right{left:75%;top:42%}
 .it-soon-label{position:absolute;left:3%;top:5%;padding:8px 14px;background:rgba(15,30,45,.82);border:1px solid var(--gold);color:var(--gold-l);font-family:'Montserrat';font-weight:600;font-size:11px;letter-spacing:.3em;text-transform:uppercase}
 .it-video button:hover .play,.it-video button:focus-visible .play{background:var(--gold)}
 .it-video button:hover .play::after,.it-video button:focus-visible .play::after{border-left-color:#0F1E2D}
@@ -43,7 +43,7 @@
 .it-quote{font-family:'Cormorant';font-style:italic;font-size:30px;line-height:1.4;text-align:center;max-width:760px;margin:0 auto;color:var(--midnight)}
 .it-quote footer{font-family:'Montserrat';font-style:normal;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:16px}
 .it-next{text-align:center}
-@media (max-width:720px){.it-ep h3{font-size:23px}.it-quote{font-size:23px}.it-video .play{width:64px;height:64px;margin:-32px 0 0 -32px}.it-video .play::after{left:25px;top:18px;border-width:14px 0 14px 21px}.it-video .play-side{left:35%;width:50px;height:50px;margin:-25px 0 0 -25px}.it-video .play-side::after{left:19px;top:13px;border-width:12px 0 12px 17px}.it-soon-label{font-size:9px;padding:5px 9px;letter-spacing:.24em}}
+@media (max-width:720px){.it-ep h3{font-size:23px}.it-quote{font-size:23px}.it-video .play{width:64px;height:64px;margin:-32px 0 0 -32px}.it-video .play::after{left:25px;top:18px;border-width:14px 0 14px 21px}.it-video .play-side{left:35%;width:50px;height:50px;margin:-25px 0 0 -25px}.it-video .play-side::after{left:19px;top:13px;border-width:12px 0 12px 17px}.it-video .play-right{width:50px;height:50px;margin:-25px 0 0 -25px}.it-video .play-right::after{left:19px;top:13px;border-width:12px 0 12px 17px}.it-soon-label{font-size:9px;padding:5px 9px;letter-spacing:.24em}}
 </style>
 <script>
 document.addEventListener('click',function(e){var b=e.target.closest('.it-video button');if(!b)return;var f=document.createElement('iframe');
@@ -112,7 +112,7 @@ f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; p
       <h3 id="ep3-h">Episode 3 &mdash; Early Buddhism</h3>
       
       <div class="it-video">
-        <button type="button" data-id="xsF8AjsV3YE" data-title="The Inner Thread: Episode 3" aria-label="Play The Inner Thread: Episode 3"><img src="https://i.ytimg.com/vi/xsF8AjsV3YE/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span></button>
+        <button type="button" data-id="xsF8AjsV3YE" data-title="The Inner Thread: Episode 3" aria-label="Play The Inner Thread: Episode 3"><picture><source type="image/webp" srcset="img/inner-thread/ep3-cover-960.webp 960w, img/inner-thread/ep3-cover-1920.webp 1920w" sizes="(max-width: 1000px) 100vw, 960px"><img src="img/inner-thread/ep3-cover-960.jpg" srcset="img/inner-thread/ep3-cover-960.jpg 960w, img/inner-thread/ep3-cover-1920.jpg 1920w" sizes="(max-width: 1000px) 100vw, 960px" alt="The Inner Thread, Episode 3: Early Buddhism. What If the Self You Defend Is Not What You Think?" width="1920" height="1080" loading="lazy"></picture><span class="play play-right" aria-hidden="true"></span></button>
         <noscript><iframe src="https://www.youtube-nocookie.com/embed/xsF8AjsV3YE" title="The Inner Thread: Episode 3" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></noscript>
       </div>
       <p class="it-watch"><a class="btn btn-line" href="https://youtu.be/xsF8AjsV3YE" target="_blank" rel="noopener">Watch on YouTube<span class="sr-only"> (opens in a new tab)</span></a></p>

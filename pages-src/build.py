@@ -779,7 +779,7 @@ IT_STYLE = """<style>
 .it-video .play{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:rgba(15,30,45,.82);border:2px solid var(--gold)}
 .it-video .play::after{content:"";position:absolute;left:33px;top:24px;border-style:solid;border-width:18px 0 18px 28px;border-color:transparent transparent transparent var(--gold)}
 .it-video .play-low{top:76%}
-.it-video .play-side{left:37%;top:58%}
+.it-video .play-side{left:37%;top:58%}.it-video .play-right{left:75%;top:42%}
 .it-soon-label{position:absolute;left:3%;top:5%;padding:8px 14px;background:rgba(15,30,45,.82);border:1px solid var(--gold);color:var(--gold-l);font-family:'Montserrat';font-weight:600;font-size:11px;letter-spacing:.3em;text-transform:uppercase}
 .it-video button:hover .play,.it-video button:focus-visible .play{background:var(--gold)}
 .it-video button:hover .play::after,.it-video button:focus-visible .play::after{border-left-color:#0F1E2D}
@@ -787,7 +787,7 @@ IT_STYLE = """<style>
 .it-quote{font-family:'Cormorant';font-style:italic;font-size:30px;line-height:1.4;text-align:center;max-width:760px;margin:0 auto;color:var(--midnight)}
 .it-quote footer{font-family:'Montserrat';font-style:normal;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:16px}
 .it-next{text-align:center}
-@media (max-width:720px){.it-ep h3{font-size:23px}.it-quote{font-size:23px}.it-video .play{width:64px;height:64px;margin:-32px 0 0 -32px}.it-video .play::after{left:25px;top:18px;border-width:14px 0 14px 21px}.it-video .play-side{left:35%;width:50px;height:50px;margin:-25px 0 0 -25px}.it-video .play-side::after{left:19px;top:13px;border-width:12px 0 12px 17px}.it-soon-label{font-size:9px;padding:5px 9px;letter-spacing:.24em}}
+@media (max-width:720px){.it-ep h3{font-size:23px}.it-quote{font-size:23px}.it-video .play{width:64px;height:64px;margin:-32px 0 0 -32px}.it-video .play::after{left:25px;top:18px;border-width:14px 0 14px 21px}.it-video .play-side{left:35%;width:50px;height:50px;margin:-25px 0 0 -25px}.it-video .play-side::after{left:19px;top:13px;border-width:12px 0 12px 17px}.it-video .play-right{width:50px;height:50px;margin:-25px 0 0 -25px}.it-video .play-right::after{left:19px;top:13px;border-width:12px 0 12px 17px}.it-soon-label{font-size:9px;padding:5px 9px;letter-spacing:.24em}}
 </style>
 <script>
 document.addEventListener('click',function(e){var b=e.target.closest('.it-video button');if(!b)return;var f=document.createElement('iframe');
@@ -802,7 +802,8 @@ EPISODES = [
          cover=dict(base='img/inner-thread/ep1-cover-v2', widths=(960, 1920), h=1080, alt='The Inner Thread, Episode 1: The Oracle Wasn&rsquo;t the Answer. You Were.', play='play-side')),
     dict(num=2, title='The Upanishads', youtube='j7n43mCGFv4', runtime='4:46', status=None,
          cover=dict(base='img/inner-thread/ep2-cover-v2', widths=(960, 1920), h=1080, alt='The Inner Thread, Episode 2: The Upanishads', play='play-side')),
-    dict(num=3, title='Early Buddhism', youtube='xsF8AjsV3YE', runtime=None, status=None, cover=None),
+    dict(num=3, title='Early Buddhism', youtube='xsF8AjsV3YE', runtime=None, status=None,
+         cover=dict(base='img/inner-thread/ep3-cover', widths=(960, 1920), h=1080, alt='The Inner Thread, Episode 3: Early Buddhism. What If the Self You Defend Is Not What You Think?', play='play-right')),
 ]
 
 def it_picture(c):
