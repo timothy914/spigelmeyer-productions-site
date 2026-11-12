@@ -187,6 +187,21 @@ SUBSCRIBE = f'''<section class="sub-band dark" aria-labelledby="signal-h">
 
 # Field Notes posts. A post with a slug has its own page at field-notes/<slug>.html; others are placeholders.
 POSTS = {
+    'the-costume-of-conscience': {
+        'title': 'The Costume of Conscience', 'iso': '2026-11-12', 'date': 'November 12, 2026',
+        'excerpt': 'Am I answering my conscience, or my audience?',
+        'desc': 'When does getting involved become just another form of conformity? A Field Note from Timothy Lee Spigelmeyer Jr on conscience, the crowd, and performance.',
+        'image': 'img/field-notes/the-costume-of-conscience.jpg', 'image_w': 1600, 'image_h': 900, 'wide': True,
+        'caption': 'Conscience, or audience',
+        'share': '/img/field-notes/the-costume-of-conscience-share.jpg',
+        'alt': 'A man in an ivory linen coat holds a gold theatrical mask away from his face, surrounded by a hazy crowd of identical white-masked figures with raised hands',
+        'body': [
+            'There is a quiet moment when “getting involved” stops being an act of conscience and turns into a costume worn for the crowd.',
+            'When we step forward because it is expected, because silence looks suspicious, or because everyone else already has, we are not following our inner compass. We are following the room. What looks like virtue then becomes performance: the outer self acts out a conviction the inner self never actually reached.',
+            'Real participation comes from the center outward, and anything that starts from the edges, even something righteous, is just conformity dressed up as courage.',
+            'Before you join, ask yourself one honest question: <em>Am I answering my conscience, or my audience?</em>',
+        ],
+    },
     'home-was-never-behind-the-door': {
         'title': 'Home Was Never Behind the Door', 'iso': '2026-10-23', 'date': 'October 23, 2026',
         'series': 'The Itinerant Creative',
@@ -337,6 +352,7 @@ POSTS = {
 }
 SIGNOFF = '~ Timothy'   # standing rule: every Field Note ends with this sign-off
 NOTES = [  # (iso, display date, title, slug or None)
+    ('2026-11-12', 'November 12, 2026', 'The Costume of Conscience', 'the-costume-of-conscience'),
     ('2026-10-23', 'October 23, 2026', 'Home Was Never Behind the Door', 'home-was-never-behind-the-door'),
     ('2026-07-13', 'July 13, 2026', 'Hotel Cyan, Late Afternoon', 'hotel-cyan'),
     ('2026-07-12', 'July 12, 2026', 'What the Lightning Knew', 'what-the-lightning-knew'),
@@ -735,6 +751,9 @@ def post_page(slug, P):
     epi = (f'<p class="epigraph" style="font-family:\'Cormorant\';font-style:italic;font-size:26px;line-height:1.4;color:var(--midnight);text-align:center;max-width:620px;margin:0 auto 40px">{P["epigraph"]}</p>\n    ') if P.get('epigraph') else ''
     cred = (f'<p class="credit" style="font-family:\'Montserrat\';font-size:11px;letter-spacing:.06em;color:var(--muted);text-align:center;margin-top:8px">{P["credit"]}</p>') if P.get('credit') else ''   # optional photo credit
     ser = (f'\n    <p class="series" style="font-family:\'Montserrat\';font-weight:600;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-l);margin-top:14px">{P["series"]}</p>') if P.get('series') else ''
+    # image is optional: posts without one render text-only and share the site default image
+    wide = ' class="wide"' if P.get('wide') else ''
+    fig = (f'<figure{wide}><img src="{P["image"]}" alt="{P["alt"]}" width="{P["image_w"]}" height="{P["image_h"]}"><figcaption>{P.get("caption", "Late afternoon, by the water")}</figcaption>{cred}</figure>\n    ') if P.get('image') else ''
     body = f'''<section class="post-head dark" aria-label="Field Note">
   <div class="wrap">
     <div class="kicker c">Field Notes</div>
@@ -745,8 +764,7 @@ def post_page(slug, P):
 <article class="post" aria-labelledby="post-title">
   <div class="wrap">
     <h2 id="post-title" class="sr-only">{P["title"]}</h2>
-    <figure{' class="wide"' if P.get("wide") else ''}><img src="{P["image"]}" alt="{P["alt"]}" width="{P["image_w"]}" height="{P["image_h"]}"><figcaption>{P.get("caption", "Late afternoon, by the water")}</figcaption>{cred}</figure>
-    {epi}<div class="body">
+    {fig}{epi}<div class="body">
         {paras}
         <p class="signoff">{SIGNOFF}</p>
     </div>
@@ -758,7 +776,7 @@ def post_page(slug, P):
 </article>
 '''
     file = f'field-notes/{slug}.html'
-    html = head(file, f'{P["title"]} | Field Notes | Spigelmeyer Productions', P['desc'], og_image=P['share'], og_type='article') \
+    html = head(file, f'{P["title"]} | Field Notes | Spigelmeyer Productions', P['desc'], og_image=P.get('share', '/img/social-share.jpg'), og_type='article') \
         + header('field-notes.html') + body + '\n' + footer()
     html = html.replace('<link rel="stylesheet" href="css/site.css">', '<link rel="stylesheet" href="css/site.css">\n' + POST_STYLE.rstrip())
     html = html.replace('<meta name="theme-color"', f'<meta property="article:published_time" content="{P["iso"]}">\n<meta name="theme-color"', 1)
