@@ -187,6 +187,24 @@ SUBSCRIBE = f'''<section class="sub-band dark" aria-labelledby="signal-h">
 
 # Field Notes posts. A post with a slug has its own page at field-notes/<slug>.html; others are placeholders.
 POSTS = {
+    'the-view-from-the-top': {
+        'title': 'The View From the Top', 'iso': '2026-11-16', 'date': 'November 16, 2026',
+        'excerpt': 'What happens when you finally reach the top of the mountain you\u2019ve spent so long trying to climb?',
+        'desc': 'What happens when you reach the summit you spent years climbing? A Field Note from Timothy Lee Spigelmeyer Jr on achievement, seasons, and returning to center.',
+        'image': 'img/field-notes/the-view-from-the-top.jpg', 'image_w': 1600, 'image_h': 1067, 'wide': True,
+        'caption': 'Sunrise, from the summit',
+        'share': '/img/field-notes/the-view-from-the-top-share.jpg',
+        'alt': 'A man with a backpack sits on a rock outcrop at sunrise, looking out over forested mountains and a valley filled with mist',
+        'body': [
+            'What happens when you finally reach the top of the mountain you\u2019ve spent so long trying to climb? What happens then?',
+            'We spend much of our lives chasing the next achievement, the next goal, the next dollar sign. Then we get there and find the horizon full of other peaks still to climb, other ideas to explore and put into action. If the summit was supposed to be the answer, why does it feel like another question?',
+            'Maybe it was never meant to be the answer. Things fade and go away. Trees lose their leaves every year, and the seasons change. The trophy gathers dust, the paycheck gets spent, and the milestone becomes something we used to talk about. Nature doesn\u2019t count that as failure. It\u2019s just how things move. The tree doesn\u2019t mourn its leaves, because the leaves were never the tree.',
+            'The same goes for us. The achievement was never the point. The point was the climb, and the person it made you: the patience you learned, the fear you walked through, the strength you didn\u2019t know you had. That stays with you after the view fades.',
+            'Look at the man on the rock. He isn\u2019t planting a flag or looking for the next trail. He\u2019s sitting still and watching the light come over the valley. That\u2019s the part most of us skip. We reach the top and start scanning for the next mountain before we\u2019ve taken a breath.',
+            'So here\u2019s what happens at the summit, if we let it. We stop. We breathe. We look at how far we\u2019ve come and remember who we are apart from what we\u2019ve achieved. Then, from that center and not from fear or hunger, we choose the next peak.',
+            'The mountain was never the destination. <em>You were.</em>',
+        ],
+    },
     'the-costume-of-conscience': {
         'title': 'The Costume of Conscience', 'iso': '2026-11-12', 'date': 'November 12, 2026',
         'excerpt': 'Am I answering my conscience, or my audience?',
@@ -352,6 +370,7 @@ POSTS = {
 }
 SIGNOFF = '~ Timothy'   # standing rule: every Field Note ends with this sign-off
 NOTES = [  # (iso, display date, title, slug or None)
+    ('2026-11-16', 'November 16, 2026', 'The View From the Top', 'the-view-from-the-top'),
     ('2026-11-12', 'November 12, 2026', 'The Costume of Conscience', 'the-costume-of-conscience'),
     ('2026-10-23', 'October 23, 2026', 'Home Was Never Behind the Door', 'home-was-never-behind-the-door'),
     ('2026-07-13', 'July 13, 2026', 'Hotel Cyan, Late Afternoon', 'hotel-cyan'),
