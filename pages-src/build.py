@@ -964,6 +964,14 @@ PF_STYLE = """<style>
 .pf-card p{font-size:18px;line-height:1.45;margin-top:8px}
 .pf-ph{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:var(--steward);color:var(--gold-l);font-family:'Montserrat';font-weight:600;font-size:12px;letter-spacing:.3em;text-transform:uppercase;border:1px solid var(--line);text-align:center;padding:20px}
 #pf-client .pf-grid{grid-template-columns:repeat(2,minmax(0,380px));justify-content:center}
+.pf-grid.pf-two{grid-template-columns:repeat(2,minmax(0,440px));justify-content:center}
+.pf-jump{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 34px;padding:26px 20px 0;font-family:'Montserrat';font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.pf-jump a{color:var(--steward);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:4px}
+.pf-jump a:hover,.pf-jump a:focus-visible{border-bottom-color:var(--gold);color:var(--midnight)}
+.pf-sec{scroll-margin-top:90px}
+.pf-cta{text-align:center}
+.pf-cta p{font-size:20px;max-width:620px;margin:12px auto 0}
+.pf-cta .ctas{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px}
 .pf-open{all:unset;box-sizing:border-box;display:block;width:100%;cursor:zoom-in;text-align:left;font:inherit}
 .pf-open:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .pf-open:hover .pf-media img{transform:scale(1.02)}
@@ -983,7 +991,7 @@ PF_STYLE = """<style>
 .lb-prev{left:10px}.lb-next{right:10px}
 .lb.single .lb-nav{display:none}
 @media (max-width:900px){.pf-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:560px){.pf-grid,#pf-client .pf-grid{grid-template-columns:1fr;gap:20px}.lb-stage{padding:0 8px}.lb-nav{top:auto;bottom:58px;transform:none}}
+@media (max-width:560px){.pf-grid,#pf-client .pf-grid,.pf-grid.pf-two{grid-template-columns:1fr;gap:20px}.lb-stage{padding:0 8px}.lb-nav{top:auto;bottom:58px;transform:none}}
 </style>"""
 def pf_card(pj):
     if pj.get('placeholder'):
@@ -1015,13 +1023,15 @@ def pf_card(pj):
                 f'<div class="pf-body">{soon}<h3>{pj["title"]}</h3>{lab}<p>{pj["desc"]}</p>{cnt}</div></button></article>')
     return f'<article class="pf-card">{img}<div class="pf-body"><h3>{pj["title"]}</h3>{lab}<p>{pj.get("desc","")}</p></div></article>'
 def pf_section(key, name, note):
-    cards = '\n      '.join(pf_card(p) for p in PROJECTS if p['section'] == key)
+    items = [p for p in PROJECTS if p['section'] == key]
+    cards = '\n      '.join(pf_card(p) for p in items)
+    gcls = 'pf-grid pf-two' if len(items) == 4 else 'pf-grid'   # 4 cards read as 2x2, never 3+1
     nt = f'<p class="pf-note">{note}</p>' if note else ''
     return f"""<section class="section pf-sec" id="pf-{key}" aria-labelledby="pf-{key}-h">
   <div class="wrap">
     <h2 id="pf-{key}-h">{name}</h2>
     {nt}
-    <div class="pf-grid">
+    <div class="{gcls}">
       {cards}
     </div>
   </div>
@@ -1062,9 +1072,20 @@ GOV_STYLE = """<style>
 .gov-cta{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
 @media (max-width:900px){.gov-grid{grid-template-columns:1fr;gap:40px}}
 </style>"""
-pages['portfolio.html'] = ('Portfolio | Spigelmeyer Productions',
- 'Selected brand identity and design work by Spigelmeyer Productions.',
-banner('Design Work', 'Portfolio', 'Selected brand identity and design work by Spigelmeyer Productions.') + '\n'.join(pf_section(*x) for x in PF_SECTIONS) + PF_LIGHTBOX)
+PF_JUMP = ('<nav class="pf-jump" aria-label="Portfolio sections">'
+           + ''.join(f'<a href="#pf-{k}">{n}</a>' for k, n, _ in PF_SECTIONS) + '</nav>')
+_resume_btn = (f'<a class="btn btn-navy" href="downloads/{RESUME_FILE}?v={RESUME_VER}" target="_blank" rel="noopener">Download R&eacute;sum&eacute;'
+               '<span class="sr-only"> (PDF, opens in a new tab)</span></a>' if HAS_RESUME else '')
+PF_CTA = f"""<section class="section pf-sec pf-cta" aria-labelledby="pf-cta-h">
+  <div class="wrap">
+    <h2 id="pf-cta-h">Let&rsquo;s Work Together</h2>
+    <p>Hiring a designer or building a brand? Download my r&eacute;sum&eacute; or start a project.</p>
+    <div class="ctas">{_resume_btn}<a class="btn btn-line" href="contact.html">Start a Project</a></div>
+  </div>
+</section>"""
+pages['portfolio.html'] = ('Portfolio | Timothy Lee Spigelmeyer Jr | Spigelmeyer Productions',
+ 'Brand identity and design work by Timothy Lee Spigelmeyer Jr: client work, in-house brands and Full Sail University projects.',
+banner('Design Work', 'Portfolio', 'Brand identity and design work by Timothy Lee Spigelmeyer Jr.') + PF_JUMP + '\n'.join(pf_section(*x) for x in PF_SECTIONS) + PF_CTA + PF_LIGHTBOX)
 if True:   # Government page live 2026-10-30
     pages['government.html'] = ('Government &amp; Military | Spigelmeyer Productions',
  'Spigelmeyer Productions is a veteran-owned creative company founded by Timothy Lee Spigelmeyer Jr, a veteran of the U.S. Navy and Pennsylvania Army National Guard.',
