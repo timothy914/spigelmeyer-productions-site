@@ -197,6 +197,9 @@ header.site{background:var(--cream);border-bottom:1px solid var(--line);position
 .portrait img{width:100%;aspect-ratio:1;object-fit:cover;filter:saturate(.9)}
 .about .name{font-style:italic;font-weight:600;color:var(--midnight)}
 .about p{font-size:21px;line-height:1.55;margin-top:18px;max-width:600px}
+.about .resume-link{margin-top:20px}
+.resume-link a{font-family:'Montserrat';font-weight:600;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--steward);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:4px}
+.resume-link a:hover,.resume-link a:focus-visible{color:var(--midnight);border-bottom-width:2px}
 .motto{font-family:'Cinzel';font-weight:500;font-size:18px;letter-spacing:.14em;color:var(--midnight);margin-top:28px;display:flex;align-items:center;gap:16px}
 .motto i{width:1px;height:20px;background:var(--gold)}
 .about .btn{margin-top:32px}

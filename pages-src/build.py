@@ -8,6 +8,12 @@ EMAIL = 'timothy@spigiproducts.com'
 # Form handler endpoint (Cloudflare Worker in ../forms-worker). Leave '' to keep the mailto fallback.
 # Set to e.g. 'https://sp-forms.<subdomain>.workers.dev/submit' once Email Sending is live, then rebuild + redeploy.
 FORMS_ENDPOINT = 'https://sp-forms.timothy-876.workers.dev/submit'
+
+# Resume: drop the PDF at pages-src/assets/Timothy-Lee-Spigelmeyer-Jr-Resume.pdf. The About link only appears when the file is there.
+from pathlib import Path as _P
+RESUME_FILE = 'Timothy-Lee-Spigelmeyer-Jr-Resume.pdf'
+HAS_RESUME = (_P(__file__).resolve().parent / 'assets' / RESUME_FILE).exists()
+RESUME_LINK = (f'<p class="resume-link"><a href="downloads/{RESUME_FILE}" target="_blank" rel="noopener">View My R&eacute;sum&eacute; <span aria-hidden="true">&rarr;</span><span class="sr-only"> (PDF, opens in a new tab)</span></a></p>' if HAS_RESUME else '')
 LIVE = bool(FORMS_ENDPOINT)
 HONEYPOT = '<div class="hp" aria-hidden="true"><label>Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label></div>'
 PHONE = '814-537-8014'
@@ -523,6 +529,7 @@ f'''<section class="hero" aria-label="Introduction">
       <h2 id="about-h">Steward of the Mirror</h2>
       <p><span class="name">Spigelmeyer</span> means steward of the mirror. The whole house is built on that idea: every book, garment, and design is made to reflect something true, not just to look good.</p>
       <p>Spigelmeyer Productions is a veteran-owned creative productions company, founded and run by U.S. Navy veteran Timothy Lee Spigelmeyer Jr.</p>
+      {RESUME_LINK}
       <p class="motto">Built by one hand <i aria-hidden="true"></i> Made for many</p>
       <a class="btn btn-line" href="field-notes.html">Read Field Notes</a>
     </div>
@@ -900,6 +907,7 @@ banner('Documentary Series', 'The Inner Thread', 'A cinematic documentary series
 
 
 # ---------------- PORTFOLIO + GOVERNMENT (preview only) ----------------
+FULLSAIL = {'Whimworks &amp; The Fifth Flower', '[RE]MEMBERing', 'Black Sea Chocolate', 'Southwest Airlines'}   # Full Sail University coursework
 # One entry per project. section: 'client' or 'studio'. images: list of (src, alt). placeholder=True renders a 'Project coming soon' tile.
 PROJECTS = [
     dict(section='client', title='Guardian Angel Ride', label='Logo &amp; Brand Identity',
@@ -910,7 +918,7 @@ PROJECTS = [
          desc='Website design and mockup for a York, Pennsylvania custom knife handle maker, covering the home, work, contact and mobile pages.',
          pic=dict(base='img/portfolio/mad-max-knife-handles', w=2400, h=1152, bg='#0e0e0e', pad='0'),
          images=[('img/portfolio/mad-max-knife-handles-960.jpg', 'Mad Max Custom Knife Handles website mockup showing home, work, contact and mobile pages')]),
-] + [dict(section='studio', title=t, label=l, desc=d, bg=bg, gallery=g, soon=(x[0] if x else None)) for t, l, d, bg, g, *x in [
+] + [dict(section=('fullsail' if t in FULLSAIL else 'studio'), title=t, label=l, desc=d, bg=bg, gallery=g, soon=(x[0] if x else None)) for t, l, d, bg, g, *x in [
     ('[Au]thentic', 'Apparel &middot; T-Shirt Design', 'T-shirt design built around a gold &ldquo;[Au] 79&rdquo; element mark and the line &ldquo;no one can do you like you can.&rdquo;', '#eef0f2',
      [('authentic-tee-mockup', 2662, 1854, 'Navy [Au]thentic T-shirt mockup, front and back'), ('authentic-artwork', 2880, 1864, '[Au]thentic artwork in gold on navy with the line no one can do you like you can')]),
     ('Captain', 'Logo', 'Logo pairing an engraved anchor with script lettering and the line &ldquo;Smooth seas never made a good captain.&rdquo;', '#ffffff',
@@ -930,9 +938,14 @@ PROJECTS = [
       ('black-sea-bar', 1920, 1280, 'Black Sea Chocolate bar in red and gold packaging with a hand-drawn cacao pod, unwrapped to show dark chocolate squares'),
       ('black-sea-gift-box', 1776, 1360, 'Open teal and gold Black Sea Chocolate gift box with a tray of gold-wrapped chocolates'),
       ('black-sea-coffee-pouch', 1120, 2240, 'Teal Black Sea Salt Coffee pouch with the red oval logo and hand-drawn cacao leaves, surrounded by coffee beans and sea salt'),
-      ('black-sea-tote', 1776, 1360, 'Canvas Black Sea Chocolate tote bag with the red oval logo and a blue patterned border')], 'Coming soon!'),
+      ('black-sea-tote', 1776, 1360, 'Canvas Black Sea Chocolate tote bag with the red oval logo and a blue patterned border')]),
+    ('Southwest Airlines', 'Advertising Campaign', 'An advertising campaign for Southwest Airlines built around #LoveMoves, with a Travel Journal magazine cover and a &ldquo;Fly with heart, land with love&rdquo; flyer.', '#e9e6df',
+     [('southwest-travel-journal', 2576, 2576, 'Travel Journal magazine cover for Southwest Airlines: Love Lands Everyday on Southwest, with a plane landing at sunset'),
+      ('southwest-fly-with-heart', 1080, 1080, 'Southwest Airlines flyer: Fly with heart, land with love, with three travel photos and a Book Now button')]),
 ]]
-PF_SECTIONS = [('client', 'Client Work', None), ('studio', 'SP Studio &amp; Concept Work', 'Concept brands, posters and mockups designed in-house by Timothy Lee Spigelmeyer Jr. Not client work.')]
+PF_SECTIONS = [('client', 'Client Work', None),
+               ('studio', 'SP In-House Work', 'Concept brands, apparel and logos designed in-house by Timothy Lee Spigelmeyer Jr. Not client work.'),
+               ('fullsail', 'Full Sail Portfolio', 'Brand, packaging and campaign projects from the B.S. Graphic Design program at Full Sail University.')]
 PF_STYLE = """<style>
 .pf-sec{margin-top:8px}
 .pf-sec h2{text-align:center}
@@ -1113,6 +1126,8 @@ shutil.copy2(SRC / 'nav' / 'nav.js', OUT / 'js' / 'nav.js')
 if True:
     (OUT / 'downloads').mkdir(exist_ok=True)
     shutil.copy2(Path(__file__).resolve().parent / 'assets' / 'SP-Capability-Statement.pdf', OUT / 'downloads' / 'SP-Capability-Statement.pdf')
+    if HAS_RESUME:
+        shutil.copy2(Path(__file__).resolve().parent / 'assets' / RESUME_FILE, OUT / 'downloads' / RESUME_FILE)
 for slug, P in POSTS.items():
     pf, phtml = post_page(slug, P)
     (OUT / pf).write_text(phtml)
