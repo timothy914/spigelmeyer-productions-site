@@ -910,6 +910,24 @@ banner('Documentary Series', 'The Inner Thread', 'A cinematic documentary series
 
 # ---------------- PORTFOLIO + GOVERNMENT (preview only) ----------------
 FULLSAIL = {'Whimworks &amp; The Fifth Flower', '[Re]membering', 'Black Sea Chocolate', 'Southwest Airlines'}   # Full Sail University coursework
+# Case studies (Full Sail projects), keyed by card title. Written by Timothy; shown as an expandable panel under each card.
+CASES = {
+    'Whimworks &amp; The Fifth Flower': [
+        ('Challenge', 'Build a brand and packaging system for Whimworks, a tabletop game company that revives ancient games, and its first title: a reimagining of the Mesoamerican game Patolli. The work had to honor the culture behind the game rather than turn it into decoration.'),
+        ('Process', 'I began with cultural research and brand strategy, defining Whimworks through two archetypes, the Jester and the Magician. I reimagined Patolli as The Fifth Flower, built on the concept &ldquo;Patolli&rsquo;s journey as a return to the center,&rdquo; then moved through logo design, typography and packaging into print and social advertising. Throughout, I chose simplicity over decoration and avoided caricatured imagery out of respect for the culture.'),
+        ('Solution', 'The Whimworks logo, a jester with a spinning top, and the tagline &ldquo;History Replayed&rdquo;; The Fifth Flower&rsquo;s layered multi-petal mark; packaging; and print and social ads, supported by a customer journey map, personas, mood boards and a 10-page case study.')],
+    '[Re]membering': [
+        ('Challenge', 'Design an event poster for &ldquo;[Re]membering: A Still Small Voice,&rdquo; a fictional speaker-led evening for World Mental Health Day built on my Return to Center philosophy. The concept treats healing as re-membering: gathering the scattered self back to its center.'),
+        ('Process', 'I started with a mind map and etymology-driven ideation around the word itself, then moved through sketching into symbol design, the typographic treatment and the final layout.'),
+        ('Solution', 'An event poster that uses my reworked candle mark as its logo, with the frequency placed at the center of the universal symbol for center.')],    'Black Sea Chocolate': [
+        ('Challenge', 'Create a brand identity and packaging system for Black Sea Chocolate, a small-batch chocolate brand &ldquo;crafted with Ukrainian heritage, inspired by Maya cacao traditions,&rdquo; that brings two cultures together in one coherent look.'),
+        ('Process', 'Cultural research came first: Ukrainian vyshyvanka embroidery patterns alongside Maya step-fret and pyramid motifs. From there I designed the logo and wordmark, built the pattern library and color system, and unified both traditions with an oval red-and-gold label system, then extended it across the product line and presented it in mockups.'),
+        ('Solution', 'A logo and oval label system; a 12-piece chocolate box (80 g); a small-batch coffee tin; a canvas tote; a pattern library; and brand mockups.')],
+    'Southwest Airlines': [
+        ('Challenge', 'Develop an advertising campaign proposal for Southwest Airlines that pairs the brand&rsquo;s heart and love positioning with the idea of movement.'),
+        ('Process', 'I researched the brand and its competitors (JetBlue, Delta and Frontier), defined the target audience, and built three mood boards covering audience, product and competition. From there I developed the concept and taglines, including typographic play that isolates &ldquo;ART&rdquo; inside &ldquo;heART,&rdquo; and moved into layout.'),
+        ('Solution', 'A research proposal, three mood boards, a campaign concept built around #LoveMoves with multiple taglines, and ad layouts including a Travel Journal magazine cover and a &ldquo;Fly with heart, land with love&rdquo; flyer.')],
+}
 # One entry per project. section: 'client' or 'studio'. images: list of (src, alt). placeholder=True renders a 'Project coming soon' tile.
 PROJECTS = [
     dict(section='client', title='Guardian Angel Ride', label='Logo &amp; Brand Identity',
@@ -969,6 +987,18 @@ PF_STYLE = """<style>
 .pf-jump a{color:var(--steward);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:4px}
 .pf-jump a:hover,.pf-jump a:focus-visible{border-bottom-color:var(--gold);color:var(--midnight)}
 .pf-sec{scroll-margin-top:90px}
+.pf-grid.pf-two{align-items:start}
+.pf-case{border-top:1px solid var(--line);padding:0 20px}
+.pf-case summary{cursor:pointer;list-style:none;font-family:'Montserrat';font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--steward);padding:16px 0;display:flex;justify-content:space-between;align-items:center}
+.pf-case summary::-webkit-details-marker{display:none}
+.pf-case summary::after{content:"+";font-size:18px;color:var(--gold);font-weight:400;transition:transform .2s}
+.pf-case[open] summary::after{transform:rotate(45deg)}
+.pf-case summary:hover{color:var(--midnight)}
+.pf-case summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.pf-case-body{padding-bottom:20px}
+.pf-case h4{font-family:'Montserrat';font-weight:600;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--steward);margin-top:14px}
+.pf-case h4:first-child{margin-top:0}
+.pf-case p{font-size:17px;line-height:1.5;margin-top:4px}
 .pf-cta{text-align:center}
 .pf-cta p{font-size:20px;max-width:620px;margin:12px auto 0}
 .pf-cta .ctas{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px}
@@ -1020,8 +1050,14 @@ def pf_card(pj):
         return (f'<article class="pf-card"><button type="button" class="pf-open" data-title="{H.escape(H.unescape(pj["title"]))}" data-g="{data}" aria-haspopup="dialog">'
                 f'<div class="pf-media" style="background:{pj["bg"]};padding:4%"><picture><source type="image/webp" srcset="{ss(n,w,"webp")}" sizes="{sz}">'
                 f'<img src="img/portfolio/{n}-960.jpg" srcset="{ss(n,w,"jpg")}" sizes="{sz}" width="{w}" height="{h}" alt="{alt}" loading="lazy" decoding="async"></picture></div>'
-                f'<div class="pf-body">{soon}<h3>{pj["title"]}</h3>{lab}<p>{pj["desc"]}</p>{cnt}</div></button></article>')
+                f'<div class="pf-body">{soon}<h3>{pj["title"]}</h3>{lab}<p>{pj["desc"]}</p>{cnt}</div></button>{pf_case(pj["title"])}</article>')
     return f'<article class="pf-card">{img}<div class="pf-body"><h3>{pj["title"]}</h3>{lab}<p>{pj.get("desc","")}</p></div></article>'
+def pf_case(title):
+    c = CASES.get(title)
+    if not c:
+        return ''
+    body = ''.join(f'<h4>{h}</h4><p>{t}</p>' for h, t in c)
+    return f'<details class="pf-case"><summary>Read the case study</summary><div class="pf-case-body">{body}</div></details>'
 def pf_section(key, name, note):
     items = [p for p in PROJECTS if p['section'] == key]
     cards = '\n      '.join(pf_card(p) for p in items)
