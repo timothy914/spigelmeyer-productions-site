@@ -13,7 +13,9 @@ FORMS_ENDPOINT = 'https://sp-forms.timothy-876.workers.dev/submit'
 from pathlib import Path as _P
 RESUME_FILE = 'Timothy-Lee-Spigelmeyer-Jr-Resume.pdf'
 HAS_RESUME = (_P(__file__).resolve().parent / 'assets' / RESUME_FILE).exists()
-RESUME_LINK = (f'<p class="resume-link"><a href="downloads/{RESUME_FILE}" target="_blank" rel="noopener">View My R&eacute;sum&eacute; <span aria-hidden="true">&rarr;</span><span class="sr-only"> (PDF, opens in a new tab)</span></a></p>' if HAS_RESUME else '')
+import hashlib as _hl
+RESUME_VER = _hl.md5((_P(__file__).resolve().parent / 'assets' / RESUME_FILE).read_bytes()).hexdigest()[:8] if HAS_RESUME else ''
+RESUME_LINK = (f'<p class="resume-link"><a href="downloads/{RESUME_FILE}?v={RESUME_VER}" target="_blank" rel="noopener">View My R&eacute;sum&eacute; <span aria-hidden="true">&rarr;</span><span class="sr-only"> (PDF, opens in a new tab)</span></a></p>' if HAS_RESUME else '')
 LIVE = bool(FORMS_ENDPOINT)
 HONEYPOT = '<div class="hp" aria-hidden="true"><label>Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label></div>'
 PHONE = '814-537-8014'
@@ -1147,4 +1149,7 @@ urls += ''.join(f'  <url><loc>{BASE}/field-notes/{slug}</loc></url>\n' for slug 
 
 /img/*
   Cache-Control: public, max-age=604800
+
+/downloads/*
+  Cache-Control: public, max-age=0, must-revalidate
 ''')
