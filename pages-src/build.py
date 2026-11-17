@@ -909,7 +909,7 @@ banner('Documentary Series', 'The Inner Thread', 'A cinematic documentary series
 
 
 # ---------------- PORTFOLIO + GOVERNMENT (preview only) ----------------
-FULLSAIL = {'Whimworks &amp; The Fifth Flower', '[RE]MEMBERing', 'Black Sea Chocolate', 'Southwest Airlines'}   # Full Sail University coursework
+FULLSAIL = {'Whimworks &amp; The Fifth Flower', '[Re]membering', 'Black Sea Chocolate', 'Southwest Airlines'}   # Full Sail University coursework
 # One entry per project. section: 'client' or 'studio'. images: list of (src, alt). placeholder=True renders a 'Project coming soon' tile.
 PROJECTS = [
     dict(section='client', title='Guardian Angel Ride', label='Logo &amp; Brand Identity',
@@ -933,8 +933,8 @@ PROJECTS = [
      [('cracklings-kiosk', 3500, 2454, 'Crackling&rsquo;s Wood Fired Smokehouse poster on a street kiosk mockup'), ('cracklings-poster', 3290, 4602, 'Crackling&rsquo;s Wood Fired Smokehouse poster: Hear it before you taste it')]),
     ('Breezy Productions', 'Logo', 'Logo with a speaker-inspired &ldquo;B&rdquo; mark and the tagline &ldquo;Music for the Masses.&rdquo;', '#191932',
      [('breezy-logo', 2400, 1135, 'Breezy Productions logo with the tagline Music for the Masses')]),
-    ('[RE]MEMBERing', 'Event Poster', 'Event poster for &ldquo;A Still Small Voice,&rdquo; an evening of sound, silence, and Return, shown on a kiosk and flat.', '#15130f',
-     [('remembering-kiosk', 3500, 2454, '[RE]MEMBERing event poster on a street kiosk mockup'), ('remembering-poster', 3300, 5100, '[RE]MEMBERing poster: A Still Small Voice, an evening of sound, silence, and Return')]),
+    ('[Re]membering', 'Event Poster', 'Event poster for &ldquo;A Still Small Voice,&rdquo; an evening of sound, silence, and Return, shown on a kiosk and flat.', '#15130f',
+     [('remembering-kiosk', 3500, 2454, '[Re]membering event poster on a street kiosk mockup'), ('remembering-poster', 3300, 5100, '[Re]membering poster: A Still Small Voice, an evening of sound, silence, and Return')]),
     ('Black Sea Chocolate', 'Packaging &amp; Brand Identity', 'A concept chocolate and coffee brand with packaging for a bar, pouch, tin, gift box and tote, with hand-drawn cacao details.', '#f1ece2',
      [('black-sea-group', 1920, 1280, 'Black Sea Chocolate packaging group: a gold tin, a teal box and a canvas tote, each with the red oval Black Sea Chocolate logo'),
       ('black-sea-bar', 1920, 1280, 'Black Sea Chocolate bar in red and gold packaging with a hand-drawn cacao pod, unwrapped to show dark chocolate squares'),
