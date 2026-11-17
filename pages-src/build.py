@@ -427,7 +427,7 @@ f'''<section class="hero" aria-label="Introduction">
       <h1>Meaning-making, <em>not decoration.</em></h1>
       <p class="sub">Books, design, and apparel built on concept, symbolism, and intention. Built by one hand. Made for many.</p>
       <div class="ctas">
-        <a class="btn btn-gold" href="#work">Explore the Work</a>
+        <a class="btn btn-gold" href="portfolio.html">Explore the Work</a>
         <a class="btn btn-ghost" href="design-services.html#start">Start a Project</a>
       </div>
       <div class="vet">{STAR}Veteran-owned{STAR}</div>
@@ -458,7 +458,8 @@ f'''<section class="hero" aria-label="Introduction">
           <div class="num">02 &middot; Graphic Design</div>
           <h3>Design Services</h3>
           <p>Brand identity and storytelling design, each built from a concept, not a template.</p>
-          <a class="btn btn-navy" href="design-services.html">Start a Project</a>
+          <a class="door-link" href="design-services.html" style="align-self:flex-start;margin:-12px 0 18px;font-family:'Montserrat';font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--steward);text-underline-offset:4px">Start a Project <span aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-navy" href="portfolio.html">View Portfolio</a>
         </div>
       </article>
       <article class="card">
